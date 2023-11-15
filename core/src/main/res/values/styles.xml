@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Text" parent="TextAppearance.AppCompat" />
+
+    <style name="Text.Size22">
+        <item name="android:textSize">@dimen/size22</item>
+    </style>
+
+    <style name="Text.Size22.Primary">
+        <item name="android:textColor">?attr/colorPrimaryText</item>
+    </style>
+
+    <style name="Text.Size22.Primary.RobotoMedium">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="Banner" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/x2</item>
+    </style>
+</resources>
