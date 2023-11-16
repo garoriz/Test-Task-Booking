@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.garif.hotel_feature.domain.usecase.GetHotelUseCase
-import com.garif.network.response.HotelResponse
+import com.garif.network.response.hotel.HotelResponse
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="#FFFFFF">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_navigation_panel"
+        style="@style/CardViewMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="@dimen/x5_5"
+                android:layout_height="@dimen/x5_5"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_hotel_name"
+                style="@style/Text.Size22.Primary.RobotoMedium"
+                android:layout_width="@dimen/x0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x2_25"
+                android:layout_marginEnd="@dimen/x5_5"
+                android:layout_marginBottom="@dimen/x2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_back"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Steigenberger Makadi" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/numbers"
+        style="@style/VerticalRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/cv_navigation_panel"
+        tools:itemCount="6"
+        tools:layout_editor_absoluteX="0dp"
+        tools:listitem="@layout/number_item" />
+</androidx.constraintlayout.widget.ConstraintLayout>

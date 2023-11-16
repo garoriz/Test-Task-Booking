@@ -7,5 +7,13 @@
     <fragment
         android:id="@+id/hotelFragment"
         android:name="com.garif.hotel_feature.presentation.HotelFragment"
-        android:label="HotelFragment" />
+        android:label="HotelFragment" >
+        <action
+            android:id="@id/action_hotelFragment_to_numberFragment"
+            app:destination="@id/numberFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/numberFragment"
+        android:name="com.garif.number_feature.presentation.NumbersFragment"
+        android:label="NumberFragment" />
 </navigation>

@@ -4,15 +4,17 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.garif.core.navigate
 import com.garif.core.util.AppViewModelFactory
-import com.garif.hotel_feature.DaggerHotelFeatureComponent
-import com.garif.hotel_feature.HotelFeatureComponentDependenciesProvider
 import com.garif.hotel_feature.R
 import com.garif.hotel_feature.TaskRepository
 import com.garif.hotel_feature.databinding.FragmentHotelBinding
+import com.garif.hotel_feature.di.HotelFeatureComponentProvider
 import com.garif.hotel_feature.presentation.adapter.CustomPagerAdapter
+import com.google.android.material.chip.Chip
 import com.google.android.material.snackbar.Snackbar
 import javax.inject.Inject
 
@@ -24,18 +26,16 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
     private val viewModel: HotelViewModel by viewModels {
         factory
     }
+
     @Inject
     lateinit var taskRepository: TaskRepository
 
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        val hotelFeatureComponentDependencies = (context.applicationContext as HotelFeatureComponentDependenciesProvider)
-            .getHotelFeatureComponentDependencies()
-        val taskComponent = DaggerHotelFeatureComponent.builder()
-            .hotelFeatureComponentDependencies(hotelFeatureComponentDependencies)
-            .build()
-        taskComponent.injectHotelFragment(this)
+        (context.applicationContext as HotelFeatureComponentProvider)
+            .getHotelFeatureComponent()
+            .injectHotelFragment(this)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -49,10 +49,35 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
 
     private fun initObservers() {
         viewModel.hotel.observe(viewLifecycleOwner) { it ->
-            it.fold(onSuccess = {
+            it.fold(onSuccess = { hotelResponse ->
                 with(binding) {
                     val viewPager = viewpagerPhotos
-                    viewPager.adapter = CustomPagerAdapter(requireContext(), it.image_urls)
+                    viewPager.adapter =
+                        CustomPagerAdapter(requireContext(), hotelResponse.image_urls)
+
+                    tlPhotos.setupWithViewPager(viewPager, true)
+
+                    tvRating.text = hotelResponse.rating.toString()
+                    tvRatingName.text = hotelResponse.rating_name
+                    tvHotelName.text = hotelResponse.name
+                    btnAddress.text = hotelResponse.adress
+                    tvPrice.text = hotelResponse.minimal_price.toString()
+                    tvPriceForIt.text = hotelResponse.price_for_it
+                    hotelResponse.about_the_hotel.peculiarities.forEach { description ->
+                        binding.cgPeculiarities.addView(
+                            createPeculiarityChip(
+                                requireContext(),
+                                description
+                            )
+                        )
+                    }
+                    tvDescription.text = hotelResponse.about_the_hotel.description
+                    binding.btnToNumber.setOnClickListener {
+                        navigate(
+                            R.id.action_hotelFragment_to_numberFragment,
+                            data = hotelResponse.name
+                        )
+                    }
                 }
             }, onFailure = {
                 Log.e("e", it.message.toString())
@@ -62,7 +87,7 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
         viewModel.error.observe(viewLifecycleOwner) {
             when (it) {
                 is Exception -> {
-                    showMessage(R.string.error)
+                    showMessage(com.garif.hotel_feature.R.string.error)
                 }
             }
         }
@@ -74,5 +99,16 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
             stringId,
             Snackbar.LENGTH_LONG
         ).show()
+    }
+
+    private fun createPeculiarityChip(context: Context, chipName: String): Chip {
+        return Chip(context).apply {
+            text = chipName
+            setChipBackgroundColorResource(com.garif.core.R.color.whiteout)
+            setTextColor(ContextCompat.getColor(context, com.garif.core.R.color.silver))
+            chipStrokeWidth = context.resources.getDimension(com.garif.core.R.dimen.x0)
+            isClickable = false
+        }
+
     }
 }

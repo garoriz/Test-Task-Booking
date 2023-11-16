@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="Text" parent="TextAppearance.AppCompat" />
 
     <style name="Text.Size22">
@@ -14,8 +15,178 @@
         <item name="android:fontFamily">@font/roboto_medium</item>
     </style>
 
-    <style name="Banner" parent="">
+    <style name="CardViewPhoto">
+        <item name="cardCornerRadius">@dimen/x2</item>
+        <item name="cardElevation">@dimen/x0</item>
+    </style>
+
+    <style name="TabLayoutPhoto">
+        <item name="android:layout_gravity">bottom</item>
+        <item name="tabGravity">center</item>
+        <item name="tabIndicatorHeight">@dimen/x0</item>
+    </style>
+
+    <style name="CardViewRating">
+        <item name="cardCornerRadius">@dimen/x0_5</item>
+        <item name="cardElevation">@dimen/x0</item>
+    </style>
+
+    <style name="Text.Size16">
+        <item name="android:textSize">@dimen/size16</item>
+    </style>
+
+    <style name="Text.Size17">
+        <item name="android:textSize">@dimen/size17</item>
+    </style>
+
+    <style name="Text.Size17.Secondary">
+        <item name="android:textColor">?attr/colorSecondaryText</item>
+    </style>
+
+    <style name="Text.Size17.Secondary.RobotoMedium">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="Text.Size16.Rating">
+        <item name="android:textColor">?attr/colorTextRating</item>
+    </style>
+
+    <style name="Text.Size16.InAboutHotel">
+        <item name="android:textColor">?attr/colorTextButtonInAboutHotel</item>
+    </style>
+
+    <style name="Text.Size16.InAboutHotel.RobotoMedium">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="Text.Size16.Primary">
+        <item name="android:textColor">?attr/colorPrimaryText</item>
+    </style>
+
+    <style name="Text.Size16.Primary.RobotoMedium">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="Text.Size16.Rating.RobotoMedium">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="MaterialButtonAddress">
+        <item name="android:textSize">@dimen/size14</item>
+        <item name="android:textColor">?attr/colorButtonAddress</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="Text.Size30">
+        <item name="android:textSize">@dimen/size30</item>
+    </style>
+
+    <style name="Text.Size30.Primary">
+        <item name="android:textColor">?attr/colorPrimaryText</item>
+    </style>
+
+    <style name="Text.Size30.Primary.RobotoMedium">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="Text.Size19">
+        <item name="android:textSize">@dimen/size19</item>
+    </style>
+
+    <style name="Text.Size19.Secondary">
+        <item name="android:textColor">?attr/colorSecondaryText</item>
+    </style>
+
+    <style name="Text.Size19.Secondary.RobotoMedium">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="CardViewMainTopRoundedCorners">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_top_rounded_corners
+        </item>
+        <item name="strokeWidth">@dimen/x0</item>
+        <item name="cardElevation">@dimen/x0</item>
+        <item name="cardBackgroundColor">?attr/colorPrimaryCardView</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay_card_custom_top_rounded_corners" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">@dimen/x2</item>
+        <item name="cornerSizeTopRight">@dimen/x0</item>
+        <item name="cornerSizeTopLeft">@dimen/x0</item>
+        <item name="cornerSizeBottomRight">@dimen/x1_5</item>
+        <item name="cornerSizeBottomLeft">@dimen/x1_5</item>
+    </style>
+
+    <style name="CardViewMainRoundedCorners">
+        <item name="shapeAppearanceOverlay">
+            @style/ShapeAppearanceOverlay_card_custom_rounded_corners
+        </item>
+        <item name="strokeWidth">@dimen/x0</item>
+        <item name="cardElevation">@dimen/x0</item>
+        <item name="cardBackgroundColor">?attr/colorPrimaryCardView</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay_card_custom_rounded_corners" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">@dimen/x1_5</item>
+        <item name="cornerSizeTopLeft">@dimen/x1_5</item>
+        <item name="cornerSizeBottomRight">@dimen/x1_5</item>
+        <item name="cornerSizeBottomLeft">@dimen/x1_5</item>
+    </style>
+
+    <style name="ChipGroup" parent="">
+        <item name="chipSpacing">@dimen/x1</item>
+    </style>
+
+    <style name="CardViewButtonGroupInHotelFeature">
+        <item name="shapeAppearanceOverlay">
+            @style/ShapeAppearanceOverlay_card_custom_corners_x2
+        </item>
+        <item name="strokeWidth">@dimen/x0</item>
+        <item name="cardElevation">@dimen/x0</item>
+        <item name="cardBackgroundColor">?attr/colorPrimaryCardView</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay_card_custom_corners_x2" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">@dimen/x2</item>
+        <item name="cornerSizeTopLeft">@dimen/x2</item>
+        <item name="cornerSizeBottomRight">@dimen/x2</item>
+        <item name="cornerSizeBottomLeft">@dimen/x2</item>
+    </style>
+
+    <style name="CardViewButtonInHotelFeature">
+        <item name="strokeWidth">@dimen/x0</item>
+        <item name="cardElevation">@dimen/x0</item>
+    </style>
+
+    <style name="CardViewMain">
+        <item name="strokeWidth">@dimen/x0</item>
+        <item name="cardElevation">@dimen/x0</item>
+        <item name="cardCornerRadius">@dimen/x0</item>
+        <item name="cardBackgroundColor">?attr/colorPrimaryCardView</item>
+    </style>
+
+    <style name="PrimaryMaterialButton">
+        <item name="cornerRadius">@dimen/x2</item>
+        <item name="backgroundTint">?attr/colorPrimaryButton</item>
+        <item name="android:textSize">@dimen/size16</item>
+    </style>
+
+    <style name="VerticalRecyclerView" parent="">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="Text.Size26">
+        <item name="android:textSize">@dimen/size26</item>
+    </style>
+
+    <style name="Text.Size26.Primary">
+        <item name="android:textColor">?attr/colorPrimaryText</item>
+    </style>
+
+    <style name="Text.Size26.Primary.RobotoMedium">
+        <item name="android:fontFamily">@font/roboto_medium</item>
     </style>
 </resources>

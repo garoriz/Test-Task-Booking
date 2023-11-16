@@ -1,4 +1,4 @@
-package com.garif.network.response
+package com.garif.network.response.hotel
 
 data class AboutTheHotel(
     val description: String,

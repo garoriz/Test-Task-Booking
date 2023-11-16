@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="grey">#38000000</color>
+    <color name="orange">#FFA800</color>
+    <color name="pale_orange">#33FFC700</color>
+    <color name="blue">#0D72FF</color>
+    <color name="silver">#828796</color>
+    <color name="silver_15">#26828796</color>
+    <color name="mourn_mountain_snow">#E8E9EC</color>
+    <color name="whiteout">#FBFBFC</color>
+    <color name="suit_blue">#2C3035</color>
 </resources>

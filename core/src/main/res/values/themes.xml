@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Base.Theme.TestTaskBooking" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowBackground">@color/mourn_mountain_snow</item>
         <item name="colorPrimaryText">@color/black</item>
+        <item name="colorSelectedDot">@color/black</item>
+        <item name="colorNonSelectedDot">@color/grey</item>
+        <item name="colorTextRating">@color/orange</item>
+        <item name="colorCardViewRating">@color/pale_orange</item>
+        <item name="colorButtonAddress">@color/blue</item>
+        <item name="colorSecondaryText">@color/silver</item>
+        <item name="colorPrimaryCardView">@color/white</item>
+        <item name="colorChip">@color/whiteout</item>
+        <item name="colorTextButtonInAboutHotel">@color/suit_blue</item>
+        <item name="colorCardViewInAboutHotel">@color/silver_15</item>
+        <item name="colorPrimaryButton">@color/blue</item>
     </style>
 </resources>

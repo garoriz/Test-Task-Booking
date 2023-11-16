@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?attr/selectableItemBackground">
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip"
+        android:checked="false"
+        app:checkedIcon="@null"
+        app:checkedIconEnabled="false"
+        app:checkedIconVisible="false"
+        android:checkable="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="3-я линия"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

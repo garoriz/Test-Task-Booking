@@ -1,12 +1,12 @@
 package com.garif.testtaskbooking
 
 import android.app.Application
-import com.garif.hotel_feature.HotelFeatureComponent
-import com.garif.hotel_feature.HotelFeatureComponentDependencies
-import com.garif.hotel_feature.HotelFeatureComponentDependenciesProvider
-import com.garif.hotel_feature.HotelFeatureComponentProvider
+import com.garif.hotel_feature.di.HotelFeatureComponent
+import com.garif.hotel_feature.di.HotelFeatureComponentProvider
+import com.garif.number_feature.di.NumbersFeatureComponent
+import com.garif.number_feature.di.NumbersFeatureComponentProvider
 
-class App : Application(), HotelFeatureComponentDependenciesProvider {
+class App : Application(), HotelFeatureComponentProvider, NumbersFeatureComponentProvider {
     lateinit var appComponent: AppComponent
 
     override fun onCreate() {
@@ -14,8 +14,12 @@ class App : Application(), HotelFeatureComponentDependenciesProvider {
         appComponent = DaggerAppComponent.factory().create(this)
     }
 
-    override fun getHotelFeatureComponentDependencies(): HotelFeatureComponentDependencies {
-        return appComponent
+    override fun getHotelFeatureComponent(): HotelFeatureComponent {
+        return appComponent.createHotelComponent()
+    }
+
+    override fun getNumbersFeatureComponent(): NumbersFeatureComponent {
+        return appComponent.createNumbersComponent()
     }
 
 }

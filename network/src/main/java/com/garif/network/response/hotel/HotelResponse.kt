@@ -1,4 +1,4 @@
-package com.garif.network.response
+package com.garif.network.response.hotel
 
 data class HotelResponse(
     val about_the_hotel: AboutTheHotel,

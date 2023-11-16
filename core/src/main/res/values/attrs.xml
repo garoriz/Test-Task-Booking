@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr name="colorPrimaryText" format="color"/>
+    <attr name="colorSelectedDot" format="color"/>
+    <attr name="colorNonSelectedDot" format="color"/>
+    <attr name="colorTextRating" format="color"/>
+    <attr name="colorCardViewRating" format="color"/>
+    <attr name="colorButtonAddress" format="color"/>
+    <attr name="colorSecondaryText" format="color"/>
+    <attr name="colorPrimaryCardView" format="color"/>
+    <attr name="colorChip" format="color"/>
+    <attr name="colorTextButtonInAboutHotel" format="color"/>
+    <attr name="colorCardViewInAboutHotel" format="color"/>
+    <attr name="colorPrimaryButton" format="color"/>
 </resources>

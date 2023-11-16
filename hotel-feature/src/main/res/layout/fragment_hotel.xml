@@ -1,39 +1,447 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:background="#FFFFFF"
-    tools:context=".presentation.HotelFragment">
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/tv_hotel"
-        style="@style/Text.Size22.Primary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x2_25"
-        android:fontFamily="@font/roboto_medium"
-        android:text="@string/hotel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpager_photos"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/x32"
-        android:layout_marginTop="@dimen/x2"
-        app:layout_constraintTop_toBottomOf="@id/tv_hotel">
+        android:layout_height="match_parent"
+        tools:background="#FFFFFF"
+        tools:context=".presentation.HotelFragment">
 
-        <com.google.android.material.tabs.TabLayout
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_main_info"
+            style="@style/CardViewMainTopRoundedCorners"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="@android:color/transparent"
-            app:tabBackground="@drawable/tab_selector"
-            app:tabGravity="center"
-            app:tabIndicatorHeight="0dp" />
-    </androidx.viewpager.widget.ViewPager>
+            app:contentPaddingBottom="@dimen/x2"
+            app:layout_constraintTop_toTopOf="parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_hotel"
+                    style="@style/Text.Size22.Primary.RobotoMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x2_25"
+                    android:text="@string/hotel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_photo"
+                    style="@style/CardViewPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x32"
+                    android:layout_marginHorizontal="@dimen/x2"
+                    android:layout_marginTop="@dimen/x2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_hotel">
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/viewpager_photos"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/x32"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_hotel" />
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tl_photos"
+                    style="@style/TabLayoutPhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/x2"
+                    android:layout_marginBottom="@dimen/x1"
+                    android:background="@drawable/tab_layout_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/cv_photo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:tabBackground="@drawable/tab_selector" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_rating"
+                    style="@style/CardViewRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/x2"
+                    android:layout_marginTop="@dimen/x2"
+                    app:cardBackgroundColor="?attr/colorCardViewRating"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cv_photo">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/x1_25"
+                        android:paddingVertical="@dimen/x0_5">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/iv_star"
+                            android:layout_width="@dimen/x2"
+                            android:layout_height="@dimen/x2"
+                            android:src="@drawable/ic_star"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_rating"
+                            style="@style/Text.Size16.Rating.RobotoMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/iv_star"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="5" />
+
+                        <TextView
+                            android:id="@+id/tv_rating_name"
+                            style="@style/Text.Size16.Rating.RobotoMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/x0_5"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tv_rating"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Превосходно" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tv_hotel_name"
+                    style="@style/Text.Size22.Primary.RobotoMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/x2"
+                    android:layout_marginTop="@dimen/x1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cv_rating"
+                    tools:text="Steigenberger Makadi" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_address"
+                    style="@style/MaterialButtonAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/x2"
+                    android:layout_marginTop="@dimen/x1"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="@dimen/x0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_hotel_name"
+                    tools:text="Madinat Makadi, Safaga Road, Makadi Bay, Египет" />
+
+                <TextView
+                    android:id="@+id/tv_from"
+                    style="@style/Text.Size30.Primary.RobotoMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/x2"
+                    android:layout_marginTop="@dimen/x2"
+                    android:text="@string/from"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_address" />
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    style="@style/Text.Size30.Primary.RobotoMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/x1"
+                    android:layout_marginTop="@dimen/x2"
+                    app:layout_constraintStart_toEndOf="@id/tv_from"
+                    app:layout_constraintTop_toBottomOf="@id/btn_address"
+                    tools:text="134444" />
+
+                <TextView
+                    android:id="@+id/tv_rub"
+                    style="@style/Text.Size30.Primary.RobotoMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/x1"
+                    android:layout_marginTop="@dimen/x2"
+                    android:text="@string/rub"
+                    app:layout_constraintStart_toEndOf="@id/tv_price"
+                    app:layout_constraintTop_toBottomOf="@id/btn_address" />
+
+                <TextView
+                    android:id="@+id/tv_price_for_it"
+                    style="@style/Text.Size19.Secondary.RobotoMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/x1"
+                    android:layout_marginTop="@dimen/x3_5"
+                    tools:text="@string/for_tour"
+                    app:layout_constraintStart_toEndOf="@id/tv_rub"
+                    app:layout_constraintTop_toBottomOf="@id/btn_address" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_detailed_info"
+            style="@style/CardViewMainRoundedCorners"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x1"
+            app:contentPadding="@dimen/x2"
+            app:layout_constraintTop_toBottomOf="@id/cv_main_info">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_about_hotel"
+                    style="@style/Text.Size22.Primary.RobotoMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about_hotel"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/cg_peculiarities"
+                    style="@style/ChipGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x2"
+                    app:layout_constraintTop_toBottomOf="@id/tv_about_hotel" />
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    style="@style/Text.Size16.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x1_5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cg_peculiarities"
+                    tools:text="@string/about_hotel" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/CardViewButtonGroupInHotelFeature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x2"
+                    app:cardBackgroundColor="?attr/colorCardViewInAboutHotel"
+                    app:contentPadding="@dimen/x2"
+                    app:layout_constraintTop_toBottomOf="@id/tv_description">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btn_conveniences"
+                            style="@style/CardViewButtonGroupInHotelFeature"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@android:color/transparent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/iv_emoji_happy"
+                                    android:layout_width="@dimen/x3"
+                                    android:layout_height="@dimen/x3"
+                                    android:background="@android:color/transparent"
+                                    android:src="@drawable/ic_emoji_happy"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_conveniences"
+                                    style="@style/Text.Size16.InAboutHotel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/x1_5"
+                                    android:text="@string/conveniences"
+                                    app:layout_constraintStart_toEndOf="@id/iv_emoji_happy"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_essentials_in_conveniences"
+                                    style="@style/Text.Size17.Secondary"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/x1_5"
+                                    android:text="@string/essentials"
+                                    app:layout_constraintStart_toEndOf="@id/iv_emoji_happy"
+                                    app:layout_constraintTop_toBottomOf="@id/tv_conveniences" />
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/iv_arrow_in_conveniences"
+                                    android:layout_width="@dimen/x3"
+                                    android:layout_height="@dimen/x3"
+                                    android:layout_marginStart="@dimen/x15"
+                                    android:src="@drawable/ic_arrow"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@id/tv_essentials_in_conveniences"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.divider.MaterialDivider
+                            android:id="@+id/divider_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/x4_5"
+                            android:layout_marginTop="@dimen/x1_25"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/btn_conveniences" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btn_what_include"
+                            style="@style/CardViewButtonGroupInHotelFeature"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/x1_25"
+                            app:cardBackgroundColor="@android:color/transparent"
+                            app:layout_constraintTop_toBottomOf="@id/divider_1">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/iv_check"
+                                    android:layout_width="@dimen/x3"
+                                    android:layout_height="@dimen/x3"
+                                    android:background="@android:color/transparent"
+                                    android:src="@drawable/ic_check"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_what_include"
+                                    style="@style/Text.Size16.InAboutHotel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/x1_5"
+                                    android:text="@string/what_include"
+                                    app:layout_constraintStart_toEndOf="@id/iv_check"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_essentials_in_what_include"
+                                    style="@style/Text.Size17.Secondary"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/x1_5"
+                                    android:text="@string/essentials"
+                                    app:layout_constraintStart_toEndOf="@id/iv_check"
+                                    app:layout_constraintTop_toBottomOf="@id/tv_what_include" />
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:layout_width="@dimen/x3"
+                                    android:layout_height="@dimen/x3"
+                                    android:layout_marginStart="@dimen/x15"
+                                    android:src="@drawable/ic_arrow"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@id/tv_essentials_in_what_include"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.divider.MaterialDivider
+                            android:id="@+id/divider_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/x4_5"
+                            android:layout_marginTop="@dimen/x1_25"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/btn_what_include" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            style="@style/CardViewButtonGroupInHotelFeature"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/x1_25"
+                            app:cardBackgroundColor="@android:color/transparent"
+                            app:layout_constraintTop_toBottomOf="@id/divider_2">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/iv_close_square"
+                                    android:layout_width="@dimen/x3"
+                                    android:layout_height="@dimen/x3"
+                                    android:background="@android:color/transparent"
+                                    android:src="@drawable/ic_close_square"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_what_not_include"
+                                    style="@style/Text.Size16.InAboutHotel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/x1_5"
+                                    android:text="@string/what_not_include"
+                                    app:layout_constraintStart_toEndOf="@id/iv_close_square"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_essentials_in_what_not_include"
+                                    style="@style/Text.Size17.Secondary"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/x1_5"
+                                    android:text="@string/essentials"
+                                    app:layout_constraintStart_toEndOf="@id/iv_close_square"
+                                    app:layout_constraintTop_toBottomOf="@id/tv_what_not_include" />
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:layout_width="@dimen/x3"
+                                    android:layout_height="@dimen/x3"
+                                    android:layout_marginStart="@dimen/x15"
+                                    android:src="@drawable/ic_arrow"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@id/tv_essentials_in_what_not_include"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_button"
+            style="@style/CardViewMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x1_5"
+            app:layout_constraintTop_toBottomOf="@id/cv_detailed_info">
+            
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_to_number"
+                style="@style/PrimaryMaterialButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/x2"
+                android:layout_marginVertical="@dimen/x1_5"
+                android:paddingVertical="@dimen/x1_75"
+                android:text="@string/to_select_number"/>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,7 +1,7 @@
 package com.garif.hotel_feature.domain.usecase
 
 import com.garif.hotel_feature.domain.repo.HotelRepo
-import com.garif.network.response.HotelResponse
+import com.garif.network.response.hotel.HotelResponse
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

@@ -48,11 +48,26 @@ dependencies {
     implementation("com.google.dagger:dagger:${dagger}")
     kapt("com.google.dagger:dagger-compiler:${dagger}")
 
+    val navigation = "2.5.3"
+    implementation("androidx.navigation:navigation-ui-ktx:${navigation}")
+    implementation("androidx.navigation:navigation-fragment:${navigation}")
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
+    // region Network
+    val retrofit = "2.9.0"
+    implementation("com.squareup.retrofit2:retrofit:${retrofit}")
+    implementation("com.squareup.retrofit2:converter-gson:${retrofit}")
+
+    val okhttp = "4.9.3"
+    implementation("com.squareup.okhttp3:okhttp:${okhttp}")
+    debugImplementation("com.squareup.okhttp3:logging-interceptor:${okhttp}")
+    // endregion
+
     implementation(project(":core"))
     implementation(project(":hotel-feature"))
     implementation(project(":network"))
+    implementation(project(":number-feature"))
 }

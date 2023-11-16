@@ -19,7 +19,7 @@ interface ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(HotelViewModel::class)
-    fun bindMenuViewModel(
+    fun bindHotelViewModel(
         viewModel: HotelViewModel
     ): ViewModel
 }
