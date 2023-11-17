@@ -35,6 +35,7 @@
                 android:layout_marginTop="@dimen/x2_25"
                 android:layout_marginEnd="@dimen/x5_5"
                 android:layout_marginBottom="@dimen/x2"
+                android:gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/btn_back"

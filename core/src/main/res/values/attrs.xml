@@ -12,4 +12,16 @@
     <attr name="colorTextButtonInAboutHotel" format="color"/>
     <attr name="colorCardViewInAboutHotel" format="color"/>
     <attr name="colorPrimaryButton" format="color"/>
+    <attr name="colorNumberButton" format="color"/>
+    <attr name="colorTextNumberButton" format="color"/>
+    <attr name="colorBackgroundTextInputLayout" format="color"/>
+    <attr name="colorHintTextInputLayout" format="color"/>
+    <attr name="colorBackgroundExpandImageButton" format="color"/>
+    <attr name="colorBackgroundAddImageButton" format="color"/>
+    <attr name="colorTextPayable" format="color"/>
+
+    <declare-styleable name="MaskedEditText">
+        <attr name="mask" format="string" />
+        <attr name="placeholder" format="string" />
+    </declare-styleable>
 </resources>

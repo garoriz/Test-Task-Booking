@@ -35,6 +35,18 @@
         <item name="android:textSize">@dimen/size16</item>
     </style>
 
+    <style name="Text.Size16.Payable">
+        <item name="android:textColor">?attr/colorTextPayable</item>
+    </style>
+
+    <style name="Text.Size16.Payable.RobotoMedium">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="Text.Size16.Secondary">
+        <item name="android:textColor">?attr/colorSecondaryText</item>
+    </style>
+
     <style name="Text.Size17">
         <item name="android:textSize">@dimen/size17</item>
     </style>
@@ -80,6 +92,14 @@
 
     <style name="Text.Size30">
         <item name="android:textSize">@dimen/size30</item>
+    </style>
+
+    <style name="Text.Size14">
+        <item name="android:textSize">@dimen/size14</item>
+    </style>
+
+    <style name="Text.Size14.Secondary">
+        <item name="android:textColor">?attr/colorSecondaryText</item>
     </style>
 
     <style name="Text.Size30.Primary">
@@ -188,5 +208,42 @@
 
     <style name="Text.Size26.Primary.RobotoMedium">
         <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="NumberMaterialButton">
+        <item name="cornerRadius">@dimen/x0_5</item>
+        <item name="backgroundTint">?attr/colorNumberButton</item>
+        <item name="android:textSize">@dimen/size16</item>
+        <item name="android:textColor">?attr/colorTextNumberButton</item>
+        <item name="icon">@drawable/ic_arrow_right_blue</item>
+        <item name="iconGravity">textEnd</item>
+        <item name="iconTint">?attr/colorTextNumberButton</item>
+        <item name="iconSize">@dimen/x3</item>
+        <item name="android:paddingVertical">@dimen/x0_5</item>
+        <item name="android:paddingStart">@dimen/x1_25</item>
+        <item name="android:paddingEnd">@dimen/x0</item>
+        <item name="android:minHeight">@dimen/x0</item>
+        <item name="android:minWidth">@dimen/x0</item>
+    </style>
+
+    <style name="TextInputLayout" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <item name="boxCornerRadiusBottomEnd">@dimen/x1_5</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/x1_5</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/x1_5</item>
+        <item name="boxCornerRadiusTopStart">@dimen/x1_5</item>
+        <item name="boxStrokeWidth">@dimen/x0</item>
+        <item name="boxBackgroundColor">?attr/colorBackgroundTextInputLayout</item>
+        <item name="hintTextColor">?attr/colorHintTextInputLayout</item>
+        <item name="boxStrokeWidthFocused">@dimen/x0</item>
+    </style>
+
+    <style name="ExpandImageButton" parent="">
+        <item name="boxCornerRadiusBottomEnd">@dimen/x1_5</item>
+    </style>
+
+    <style name="PhoneNumberEditText" parent="">
+        <item name="android:inputType">phone</item>
+        <item name="mask">+7 (999) 999-99-99</item>
+        <item name="placeholder">*</item>
     </style>
 </resources>

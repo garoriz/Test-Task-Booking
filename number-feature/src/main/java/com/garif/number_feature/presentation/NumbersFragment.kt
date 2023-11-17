@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.garif.core.navigate
 import com.garif.core.navigationData
 import com.garif.core.util.AppViewModelFactory
 import com.garif.network.response.numbers.Room
@@ -33,6 +32,7 @@ class NumbersFragment : Fragment(R.layout.fragment_number) {
             .getNumbersFeatureComponent()
             .injectNumbersFragment(this)
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -52,17 +52,13 @@ class NumbersFragment : Fragment(R.layout.fragment_number) {
     private fun initObservers() {
         viewModel.numbers.observe(viewLifecycleOwner) { it ->
             it.fold(onSuccess = { numbersResponse ->
-                with(binding) {
-                    numberListAdapter = NumberListAdapter(requireContext()) {
+                numberListAdapter = NumberListAdapter(this)
 
-                    }
-
-                    binding.numbers.run {
-                        adapter = numberListAdapter
-                    }
-
-                    numberListAdapter?.submitList(numbersResponse.rooms as MutableList<Room>)
+                binding.numbers.run {
+                    adapter = numberListAdapter
                 }
+
+                numberListAdapter?.submitList(numbersResponse.rooms as MutableList<Room>)
             }, onFailure = {
                 Log.e("e", it.message.toString())
             })

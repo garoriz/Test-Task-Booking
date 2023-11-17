@@ -1,0 +1,37 @@
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="booking">Бронирование</string>
+    <string name="arriving_from">Вылет из</string>
+    <string name="country_city">Страна, город</string>
+    <string name="dates">Даты</string>
+    <string name="night_counts">Кол-во ночей</string>
+    <string name="hotel">Отель</string>
+    <string name="number">Номер</string>
+    <string name="nourishment">Питание</string>
+    <string name="buyer_info">Информация о покупателе</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="email">Почта</string>
+    <string name="buyer_info_warning">Эти данные никому не передаются. После оплаты мы вышлем чек на указанный вами номер и почту</string>
+    <string name="first_tourist">Первый турист</string>
+    <string name="name">Имя</string>
+    <string name="surname">Фамилия</string>
+    <string name="birthday">Дата рождения</string>
+    <string name="citizenship">Гражданство</string>
+    <string name="passport_number">Номер загранпаспорта</string>
+    <string name="passport_validity_period">Срок действия загранпаспорта</string>
+    <string name="adding_tourist">Добавить туриста</string>
+    <string name="tour">Тур</string>
+    <string name="fuel_surcharge">Топливный сбор</string>
+    <string name="service_surcharge">Сервисный сбор</string>
+    <string name="error">Произошла ошибка</string>
+
+    <plurals name="nights">
+        <item quantity="zero">ночей</item>
+        <item quantity="one">ночь</item>
+        <item quantity="two">ночи</item>
+        <item quantity="few">ночи</item>
+        <item quantity="many">ночей</item>
+        <item quantity="other">ночь</item>
+    </plurals>
+</resources>

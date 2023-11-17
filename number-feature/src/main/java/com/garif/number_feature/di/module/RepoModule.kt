@@ -1,4 +1,4 @@
-package com.garif.number_feature.di
+package com.garif.number_feature.di.module
 
 import com.garif.number_feature.data.NumbersRepoImpl
 import com.garif.number_feature.domain.repo.NumbersRepo

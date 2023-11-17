@@ -15,5 +15,13 @@
     <fragment
         android:id="@+id/numberFragment"
         android:name="com.garif.number_feature.presentation.NumbersFragment"
-        android:label="NumberFragment" />
+        android:label="NumberFragment" >
+        <action
+            android:id="@id/action_numbersFragment_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingFragment"
+        android:name="com.garif.booking_feature.presentation.BookingFragment"
+        android:label="BookingFragment" />
 </navigation>

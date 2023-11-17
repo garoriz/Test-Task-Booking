@@ -3,12 +3,14 @@ package com.garif.hotel_feature.presentation
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
+import android.util.TypedValue
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.garif.core.navigate
 import com.garif.core.util.AppViewModelFactory
+import com.garif.core.util.moneyType
 import com.garif.hotel_feature.R
 import com.garif.hotel_feature.TaskRepository
 import com.garif.hotel_feature.databinding.FragmentHotelBinding
@@ -61,7 +63,7 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
                     tvRatingName.text = hotelResponse.rating_name
                     tvHotelName.text = hotelResponse.name
                     btnAddress.text = hotelResponse.adress
-                    tvPrice.text = hotelResponse.minimal_price.toString()
+                    tvPrice.text = hotelResponse.minimal_price.toString().moneyType()
                     tvPriceForIt.text = hotelResponse.price_for_it
                     hotelResponse.about_the_hotel.peculiarities.forEach { description ->
                         binding.cgPeculiarities.addView(
@@ -108,6 +110,14 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
             setTextColor(ContextCompat.getColor(context, com.garif.core.R.color.silver))
             chipStrokeWidth = context.resources.getDimension(com.garif.core.R.dimen.x0)
             isClickable = false
+            setTextStartPaddingResource(com.garif.core.R.dimen.x0)
+            setTextEndPaddingResource(com.garif.core.R.dimen.x0)
+            chipStartPadding = resources.getDimension(com.garif.core.R.dimen.x1_25)
+            chipEndPadding = resources.getDimension(com.garif.core.R.dimen.x1_25)
+            setTextSize(
+                TypedValue.COMPLEX_UNIT_PX,
+                resources.getDimension(com.garif.core.R.dimen.size16)
+            )
         }
 
     }

@@ -1,10 +1,10 @@
-package com.garif.hotel_feature.di
+package com.garif.booking_feature.di.module
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.garif.booking_feature.presentation.BookingViewModel
 import com.garif.core.di.ViewModelKey
 import com.garif.core.util.AppViewModelFactory
-import com.garif.hotel_feature.presentation.HotelViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -18,8 +18,8 @@ interface ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(HotelViewModel::class)
-    fun bindHotelViewModel(
-        viewModel: HotelViewModel
+    @ViewModelKey(BookingViewModel::class)
+    fun bindBookingViewModel(
+        viewModel: BookingViewModel
     ): ViewModel
 }

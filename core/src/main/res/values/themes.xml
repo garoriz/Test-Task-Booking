@@ -14,5 +14,12 @@
         <item name="colorTextButtonInAboutHotel">@color/suit_blue</item>
         <item name="colorCardViewInAboutHotel">@color/silver_15</item>
         <item name="colorPrimaryButton">@color/blue</item>
+        <item name="colorNumberButton">@color/blue_10</item>
+        <item name="colorTextNumberButton">@color/blue</item>
+        <item name="colorBackgroundTextInputLayout">@color/grams_hair</item>
+        <item name="colorHintTextInputLayout">@color/jacaranda_light</item>
+        <item name="colorBackgroundExpandImageButton">@color/blue_10</item>
+        <item name="colorBackgroundAddImageButton">@color/blue</item>
+        <item name="colorTextPayable">@color/blue</item>
     </style>
 </resources>

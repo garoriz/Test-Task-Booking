@@ -70,4 +70,5 @@ dependencies {
     implementation(project(":hotel-feature"))
     implementation(project(":network"))
     implementation(project(":number-feature"))
+    implementation(project(":booking-feature"))
 }

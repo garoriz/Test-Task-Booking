@@ -18,7 +18,6 @@
             style="@style/CardViewPhoto"
             android:layout_width="match_parent"
             android:layout_height="@dimen/x32"
-            android:layout_marginHorizontal="@dimen/x2"
             android:layout_marginTop="@dimen/x2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -51,10 +50,69 @@
             android:layout_width="@dimen/x0"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/x1"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cv_photo"
             tools:text="Стандартный с видом на бассейн или сад" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/cg_peculiarities"
+            style="@style/ChipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x1"
+            app:layout_constraintTop_toBottomOf="@id/tv_room_name" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_more_about_number"
+            style="@style/NumberMaterialButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x1"
+            android:text="@string/more_about_number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cg_peculiarities" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            style="@style/Text.Size30.Primary.RobotoMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_more_about_number"
+            tools:text="134444" />
+
+        <TextView
+            android:id="@+id/tv_rub"
+            style="@style/Text.Size30.Primary.RobotoMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x1"
+            android:layout_marginTop="@dimen/x2"
+            android:text="@string/rub"
+            app:layout_constraintStart_toEndOf="@id/tv_price"
+            app:layout_constraintTop_toBottomOf="@id/btn_more_about_number" />
+
+        <TextView
+            android:id="@+id/tv_price_for_it"
+            style="@style/Text.Size19.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x1"
+            android:layout_marginTop="@dimen/x3_5"
+            app:layout_constraintStart_toEndOf="@id/tv_rub"
+            app:layout_constraintTop_toBottomOf="@id/btn_more_about_number"
+            tools:text="за 7 ночей с перелётом" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_select_number"
+            style="@style/PrimaryMaterialButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x2"
+            android:paddingVertical="@dimen/x1_75"
+            app:layout_constraintTop_toBottomOf="@id/tv_price"
+            android:text="@string/select_number" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
