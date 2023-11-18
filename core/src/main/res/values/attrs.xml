@@ -19,6 +19,8 @@
     <attr name="colorBackgroundExpandImageButton" format="color"/>
     <attr name="colorBackgroundAddImageButton" format="color"/>
     <attr name="colorTextPayable" format="color"/>
+    <attr name="colorBackgroundPaidFragment" format="color"/>
+    <attr name="colorStrokeMainCardView" format="color"/>
 
     <declare-styleable name="MaskedEditText">
         <attr name="mask" format="string" />

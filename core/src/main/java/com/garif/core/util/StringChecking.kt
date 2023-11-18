@@ -1,15 +1,15 @@
 package com.garif.core.util
 
 import android.text.TextUtils
-import com.google.android.material.snackbar.Snackbar
 import java.util.regex.Pattern
 
-fun String.isEmailValid(): Boolean {
+fun String.isValidEmail(): Boolean {
     return !TextUtils.isEmpty(this) &&
             android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
 }
 
-fun String.isPhoneNumberValid(): Boolean {
+fun String.isValidPhoneNumber(): Boolean {
     return !TextUtils.isEmpty(this) &&
-            Pattern.compile("[+]7[0-9]{10}").matcher(this).matches()
+            Pattern.compile("[+]7 [(][0-9]{3}[)] [0-9]{3}-[0-9]{2}-[0-9]{2}").matcher(this).matches()
 }
+

@@ -5,6 +5,7 @@ import com.garif.booking_feature.di.BookingFeatureComponent
 import com.garif.core.CoreModule
 import com.garif.hotel_feature.di.HotelFeatureComponent
 import com.garif.number_feature.di.NumbersFeatureComponent
+import com.garif.paid_feature.di.PaidFeatureComponent
 import dagger.BindsInstance
 import dagger.Component
 
@@ -17,6 +18,8 @@ interface AppComponent {
     fun createNumbersComponent(): NumbersFeatureComponent
 
     fun createBookingComponent(): BookingFeatureComponent
+
+    fun createPaidComponent(): PaidFeatureComponent
 
     @Component.Factory
     interface AppComponentFactory {

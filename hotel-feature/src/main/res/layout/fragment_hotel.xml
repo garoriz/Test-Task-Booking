@@ -428,10 +428,17 @@
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cv_button"
             style="@style/CardViewMain"
+            android:background="@drawable/stroke_card_view_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/x1_5"
             app:layout_constraintTop_toBottomOf="@id/cv_detailed_info">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/stroke_card_view_main"
+                android:scaleType="fitXY"/>
             
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_to_number"

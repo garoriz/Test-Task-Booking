@@ -1,21 +1,18 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
 }
 
 android {
-    namespace = "com.garif.testtaskbooking"
+    namespace = "com.garif.paid_feature"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.garif.testtaskbooking"
         minSdk = 27
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -34,6 +31,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -41,35 +41,19 @@ dependencies {
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.navigation:navigation-fragment:2.7.5")
-
-    val dagger = "2.46"
-    implementation("com.google.dagger:dagger:${dagger}")
-    kapt("com.google.dagger:dagger-compiler:${dagger}")
 
     val navigation = "2.5.3"
     implementation("androidx.navigation:navigation-ui-ktx:${navigation}")
     implementation("androidx.navigation:navigation-fragment:${navigation}")
 
+    val dagger = "2.46"
+    implementation("com.google.dagger:dagger:${dagger}")
+    kapt("com.google.dagger:dagger-compiler:${dagger}")
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-    // region Network
-    val retrofit = "2.9.0"
-    implementation("com.squareup.retrofit2:retrofit:${retrofit}")
-    implementation("com.squareup.retrofit2:converter-gson:${retrofit}")
-
-    val okhttp = "4.9.3"
-    implementation("com.squareup.okhttp3:okhttp:${okhttp}")
-    debugImplementation("com.squareup.okhttp3:logging-interceptor:${okhttp}")
-    // endregion
-
     implementation(project(":core"))
-    implementation(project(":hotel-feature"))
-    implementation(project(":network"))
-    implementation(project(":number-feature"))
-    implementation(project(":booking-feature"))
-    implementation(project(":paid-feature"))
 }

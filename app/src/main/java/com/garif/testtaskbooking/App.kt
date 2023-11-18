@@ -7,9 +7,11 @@ import com.garif.hotel_feature.di.HotelFeatureComponent
 import com.garif.hotel_feature.di.HotelFeatureComponentProvider
 import com.garif.number_feature.di.NumbersFeatureComponent
 import com.garif.number_feature.di.NumbersFeatureComponentProvider
+import com.garif.paid_feature.di.PaidFeatureComponent
+import com.garif.paid_feature.di.PaidFeatureComponentProvider
 
 class App : Application(), HotelFeatureComponentProvider, NumbersFeatureComponentProvider,
-    BookingFeatureComponentProvider {
+    BookingFeatureComponentProvider, PaidFeatureComponentProvider {
     lateinit var appComponent: AppComponent
 
     override fun onCreate() {
@@ -27,6 +29,10 @@ class App : Application(), HotelFeatureComponentProvider, NumbersFeatureComponen
 
     override fun getBookingFeatureComponent(): BookingFeatureComponent {
         return appComponent.createBookingComponent()
+    }
+
+    override fun getPaidFeatureComponent(): PaidFeatureComponent {
+        return appComponent.createPaidComponent()
     }
 
 }

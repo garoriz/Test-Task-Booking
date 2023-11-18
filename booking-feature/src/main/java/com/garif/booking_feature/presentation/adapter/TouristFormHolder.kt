@@ -23,7 +23,7 @@ class TouristFormHolder(
     fun bind(item: TouristForm) {
         this.touristForm = item
         with(binding) {
-            tvFirstTourist.text = item.touristFormName
+            //tvFirstTourist.text = item.touristFormName
             btnArrow.setOnClickListener {
                 if (hiddenView.isVisible) {
                     TransitionManager.beginDelayedTransition(cvFirstTourist, AutoTransition())

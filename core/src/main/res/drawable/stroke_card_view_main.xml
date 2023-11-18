@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="?attr/colorPrimaryCardView" />
+        </shape>
+    </item>
+
+    <item
+        android:left="@dimen/minus_x0_25"
+        android:right="@dimen/minus_x0_25"
+        android:bottom="@dimen/minus_x0_25">
+        <shape>
+            <solid android:color="@android:color/transparent" />
+            <stroke
+                android:width="@dimen/x0_25"
+                android:color="?attr/colorStrokeMainCardView" />
+        </shape>
+    </item>
+
+</layer-list>

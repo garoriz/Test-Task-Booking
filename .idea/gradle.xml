@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/hotel-feature" />
             <option value="$PROJECT_DIR$/network" />
             <option value="$PROJECT_DIR$/number-feature" />
+            <option value="$PROJECT_DIR$/paid-feature" />
           </set>
         </option>
       </GradleProjectSettings>

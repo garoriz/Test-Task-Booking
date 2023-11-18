@@ -24,7 +24,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/tv_first_tourist"
+                android:id="@+id/tv_tourist_number"
                 style="@style/Text.Size22.Primary.RobotoMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

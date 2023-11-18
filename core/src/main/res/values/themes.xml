@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Base.Theme.TestTaskBooking" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="android:windowBackground">@color/mourn_mountain_snow</item>
+        <item name="android:windowBackground">@color/grams_hair</item>
         <item name="colorPrimaryText">@color/black</item>
         <item name="colorSelectedDot">@color/black</item>
         <item name="colorNonSelectedDot">@color/grey</item>
@@ -12,7 +12,7 @@
         <item name="colorPrimaryCardView">@color/white</item>
         <item name="colorChip">@color/whiteout</item>
         <item name="colorTextButtonInAboutHotel">@color/suit_blue</item>
-        <item name="colorCardViewInAboutHotel">@color/silver_15</item>
+        <item name="colorCardViewInAboutHotel">@color/whiteout</item>
         <item name="colorPrimaryButton">@color/blue</item>
         <item name="colorNumberButton">@color/blue_10</item>
         <item name="colorTextNumberButton">@color/blue</item>
@@ -21,5 +21,7 @@
         <item name="colorBackgroundExpandImageButton">@color/blue_10</item>
         <item name="colorBackgroundAddImageButton">@color/blue</item>
         <item name="colorTextPayable">@color/blue</item>
+        <item name="colorBackgroundPaidFragment">@color/white</item>
+        <item name="colorStrokeMainCardView">@color/mourn_mountain_snow</item>
     </style>
 </resources>
