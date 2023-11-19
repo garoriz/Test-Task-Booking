@@ -4,7 +4,6 @@ import com.garif.booking_feature.data.mappers.BookingInfoMapper
 import com.garif.booking_feature.domain.entity.BookingInfo
 import com.garif.booking_feature.domain.repo.BookingInfoRepo
 import com.garif.network.Api
-import com.garif.network.response.hotel.HotelResponse
 import javax.inject.Inject
 
 class BookingInfoRepoImpl @Inject constructor(

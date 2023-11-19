@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.garif.network.response.hotel.HotelResponse
 import com.garif.network.response.numbers.NumbersResponse
 import com.garif.number_feature.domain.usecase.GetNumbersUseCase
 import kotlinx.coroutines.launch

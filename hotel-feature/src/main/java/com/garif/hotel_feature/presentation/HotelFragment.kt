@@ -12,7 +12,6 @@ import com.garif.core.navigate
 import com.garif.core.util.AppViewModelFactory
 import com.garif.core.util.moneyType
 import com.garif.hotel_feature.R
-import com.garif.hotel_feature.TaskRepository
 import com.garif.hotel_feature.databinding.FragmentHotelBinding
 import com.garif.hotel_feature.di.HotelFeatureComponentProvider
 import com.garif.hotel_feature.presentation.adapter.CustomPagerAdapter
@@ -28,9 +27,6 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
     private val viewModel: HotelViewModel by viewModels {
         factory
     }
-
-    @Inject
-    lateinit var taskRepository: TaskRepository
 
 
     override fun onAttach(context: Context) {
@@ -89,7 +85,7 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
         viewModel.error.observe(viewLifecycleOwner) {
             when (it) {
                 is Exception -> {
-                    showMessage(com.garif.hotel_feature.R.string.error)
+                    showMessage(R.string.error)
                 }
             }
         }
@@ -119,6 +115,5 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
                 resources.getDimension(com.garif.core.R.dimen.size16)
             )
         }
-
     }
 }

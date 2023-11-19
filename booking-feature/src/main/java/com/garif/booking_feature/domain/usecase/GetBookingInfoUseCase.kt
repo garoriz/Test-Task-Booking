@@ -2,7 +2,6 @@ package com.garif.booking_feature.domain.usecase
 
 import com.garif.booking_feature.domain.entity.BookingInfo
 import com.garif.booking_feature.domain.repo.BookingInfoRepo
-import com.garif.network.response.hotel.HotelResponse
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

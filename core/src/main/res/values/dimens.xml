@@ -19,6 +19,7 @@
     <dimen name="x4_5">36dp</dimen>
     <dimen name="x5">40dp</dimen>
     <dimen name="x5_5">44dp</dimen>
+    <dimen name="x9_5">76dp</dimen>
     <dimen name="x11_75">44dp</dimen>
     <dimen name="x15">120dp</dimen>
     <dimen name="x32">256dp</dimen>

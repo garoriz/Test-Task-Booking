@@ -6,7 +6,6 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.garif.core.navigate
-import com.garif.core.util.isValidEmail
 import com.garif.core.util.nextInt
 import com.garif.paid_feature.R
 import com.garif.paid_feature.databinding.FragmentPaidBinding

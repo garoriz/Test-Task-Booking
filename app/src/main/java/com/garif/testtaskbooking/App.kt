@@ -12,7 +12,7 @@ import com.garif.paid_feature.di.PaidFeatureComponentProvider
 
 class App : Application(), HotelFeatureComponentProvider, NumbersFeatureComponentProvider,
     BookingFeatureComponentProvider, PaidFeatureComponentProvider {
-    lateinit var appComponent: AppComponent
+    private lateinit var appComponent: AppComponent
 
     override fun onCreate() {
         super.onCreate()

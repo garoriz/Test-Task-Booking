@@ -112,7 +112,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/x2"
             android:paddingVertical="@dimen/x1_75"
-            app:layout_constraintTop_toBottomOf="@id/tv_price"
-            android:text="@string/select_number" />
+            android:text="@string/select_number"
+            app:layout_constraintTop_toBottomOf="@id/tv_price" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -1,4 +1,4 @@
-package com.garif.number_feature.presentation.adapter
+package com.garif.number_feature.presentation.adapter.numbers
 
 import android.content.Context
 import android.util.TypedValue
@@ -6,13 +6,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.garif.core.CustomPagerAdapter
 import com.garif.core.navigate
 import com.garif.core.util.moneyType
 import com.garif.network.response.numbers.Room
 import com.garif.number_feature.R
 import com.garif.number_feature.databinding.NumberItemBinding
 import com.garif.number_feature.presentation.NumbersFragment
+import com.garif.number_feature.presentation.adapter.CustomPagerAdapter
 import com.google.android.material.chip.Chip
 
 class NumberHolder(

@@ -92,6 +92,10 @@
         <item name="android:textColor">?attr/colorButtonAddress</item>
         <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:gravity">left</item>
+        <item name="android:insetTop">@dimen/x0</item>
+        <item name="android:insetBottom">@dimen/x0</item>
+        <item name="android:minHeight">@dimen/x0</item>
+        <item name="android:paddingVertical">@dimen/x0</item>
     </style>
 
     <style name="Text.Size30">
@@ -127,7 +131,8 @@
     </style>
 
     <style name="CardViewMainTopRoundedCorners">
-        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_top_rounded_corners
+        <item name="shapeAppearanceOverlay">
+            @style/ShapeAppearanceOverlay_card_custom_top_rounded_corners
         </item>
         <item name="strokeWidth">@dimen/x0</item>
         <item name="cardElevation">@dimen/x0</item>

@@ -19,7 +19,6 @@ import androidx.navigation.fragment.findNavController
 import com.garif.booking_feature.R
 import com.garif.booking_feature.databinding.FragmentBookingBinding
 import com.garif.booking_feature.di.BookingFeatureComponentProvider
-import com.garif.booking_feature.presentation.adapter.TouristFormListAdapter
 import com.garif.booking_feature.presentation.entity.TouristFormList
 import com.garif.core.navigate
 import com.garif.core.util.AppViewModelFactory
@@ -38,9 +37,7 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
     private val viewModel: BookingViewModel by viewModels {
         factory
     }
-    private var touristFormListAdapter: TouristFormListAdapter? = null
     private var visibleTouristFormIndex = 0
-    private val textInputLayoutList = mutableListOf<TextInputLayout>()
     private val touristFormList = mutableListOf<ViewGroup>()
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -53,8 +50,8 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
         super.onViewCreated(view, savedInstanceState)
 
         binding = FragmentBookingBinding.bind(view)
-        addTouristForm()
         visibleTouristFormIndex = 0
+        addTouristForm()
 
 
         with(binding) {
@@ -62,27 +59,7 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
                 findNavController().popBackStack()
             }
 
-            /*touristFormListAdapter = TouristFormListAdapter(textInputLayoutList)
-
-            binding.touristForms.run {
-                adapter = touristFormListAdapter
-            }
-
-            touristFormListAdapter?.submitList(
-                TouristFormList().touristFormList.subList(
-                    0,
-                    visibleTouristsCount
-                )
-            )*/
-
             btnAdd.setOnClickListener {
-                /*visibleTouristsCount++
-                touristFormListAdapter?.submitList(
-                    TouristFormList().touristFormList.subList(
-                        0,
-                        visibleTouristsCount
-                    )
-                )*/
                 addTouristForm()
             }
 
@@ -172,8 +149,11 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
             visibleTouristFormIndex++
             touristFormList.add(layout)
 
-            (layout.layoutParams as ViewGroup.MarginLayoutParams).setMargins(0, resources.getDimension(
-                com.garif.core.R.dimen.x1).toInt(), 0, 0)
+            (layout.layoutParams as ViewGroup.MarginLayoutParams).setMargins(
+                0, resources.getDimension(
+                    com.garif.core.R.dimen.x1
+                ).toInt(), 0, 0
+            )
             layoutTourists.addView(layout, layout.layoutParams)
             listenTouristForms()
         }

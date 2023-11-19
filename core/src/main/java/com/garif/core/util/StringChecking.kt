@@ -10,6 +10,7 @@ fun String.isValidEmail(): Boolean {
 
 fun String.isValidPhoneNumber(): Boolean {
     return !TextUtils.isEmpty(this) &&
-            Pattern.compile("[+]7 [(][0-9]{3}[)] [0-9]{3}-[0-9]{2}-[0-9]{2}").matcher(this).matches()
+            Pattern.compile("[+]7 [(][0-9]{3}[)] [0-9]{3}-[0-9]{2}-[0-9]{2}").matcher(this)
+                .matches()
 }
 

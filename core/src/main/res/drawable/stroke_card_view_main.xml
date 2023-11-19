@@ -8,9 +8,9 @@
     </item>
 
     <item
+        android:bottom="@dimen/minus_x0_25"
         android:left="@dimen/minus_x0_25"
-        android:right="@dimen/minus_x0_25"
-        android:bottom="@dimen/minus_x0_25">
+        android:right="@dimen/minus_x0_25">
         <shape>
             <solid android:color="@android:color/transparent" />
             <stroke

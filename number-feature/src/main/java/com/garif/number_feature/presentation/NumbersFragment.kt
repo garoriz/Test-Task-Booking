@@ -13,7 +13,7 @@ import com.garif.network.response.numbers.Room
 import com.garif.number_feature.R
 import com.garif.number_feature.databinding.FragmentNumberBinding
 import com.garif.number_feature.di.NumbersFeatureComponentProvider
-import com.garif.number_feature.presentation.adapter.NumberListAdapter
+import com.garif.number_feature.presentation.adapter.numbers.NumberListAdapter
 import com.google.android.material.snackbar.Snackbar
 import javax.inject.Inject
 

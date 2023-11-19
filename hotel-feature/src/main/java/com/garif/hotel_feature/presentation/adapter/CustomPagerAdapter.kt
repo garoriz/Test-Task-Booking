@@ -18,8 +18,8 @@ class CustomPagerAdapter(
     PagerAdapter() {
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val inflater = LayoutInflater.from(mContext)
-        val layout = inflater.inflate(R.layout.item_photo, container, false) as ViewGroup
-        layout.findViewById<ShapeableImageView>(R.id.iv_photo).load(imageUrls[position]) {
+        val layout = inflater.inflate(com.garif.core.R.layout.item_photo, container, false) as ViewGroup
+        layout.findViewById<ShapeableImageView>(com.garif.core.R.id.iv_photo).load(imageUrls[position]) {
             transformations(
                 RoundedCornersTransformation(
                     mContext.resources.getDimension(com.garif.core.R.dimen.x2)

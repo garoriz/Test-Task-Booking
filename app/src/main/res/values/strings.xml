@@ -2,6 +2,4 @@
     <string name="app_name">TestTaskBooking</string>
     <string name="title_buildsrc">Module Title</string>
     <string name="title_hotelfeature">Отель</string>
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

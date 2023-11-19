@@ -1,4 +1,4 @@
-package com.garif.number_feature.presentation.adapter
+package com.garif.number_feature.presentation.adapter.numbers
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter

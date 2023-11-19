@@ -1,6 +1,5 @@
 package com.garif.hotel_feature.di
 
-import com.garif.hotel_feature.TaskModule
 import com.garif.hotel_feature.di.module.HotelModule
 import com.garif.hotel_feature.di.module.RepoModule
 import com.garif.hotel_feature.di.module.ViewModelModule
@@ -11,7 +10,6 @@ import dagger.Subcomponent
 @Subcomponent(
     modules = [
         NetworkModule::class,
-        TaskModule::class,
         ViewModelModule::class,
         HotelModule::class,
         RepoModule::class]
